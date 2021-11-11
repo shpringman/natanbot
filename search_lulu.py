@@ -2,21 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-import pandas as pd
-import time
-
-import unicodecsv as csv
-import re
-import unicodedata
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-
 class Lululemon:
   def __init__(self):
     self.headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
     self.url = 'https://shop.lululemon.com'
     
-
   def get_data(self, url):
     response = requests.get(url)
     content = response.content
@@ -28,6 +18,7 @@ class Lululemon:
     return text
 
   def scuba(self, preference):
+    
     #XS/S
     scuba_url_xss = 'https://shop.lululemon.com/p/womens-outerwear/Scuba-Oversized-12-Zip-Hoodie/_/prod9960807?sz=XS%2FS'
     response = requests.get(scuba_url_xss)

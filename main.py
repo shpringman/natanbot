@@ -54,6 +54,8 @@ async def on_message(message):
     await message.channel.send('yes?')
   if message.content.startswith('$hank'):
     await message.channel.send('https://cdn.discordapp.com/attachments/838822596295262248/906372973999566848/nnp06etsjdv61.png')
+  if message.content.startswith('$help'):
+    await message.channel.send('lol')
     
 
 
