@@ -17,6 +17,7 @@ class Lululemon:
     text = json.dumps(parsed, sort_keys=True, indent=4)
     return text
 
+  #BeautifulSoup Scraper
   def scuba(self, preference):
     
     #XS/S
@@ -25,7 +26,7 @@ class Lululemon:
     content = response.content
     soup_xss = BeautifulSoup(content, 'html.parser')
     soup2_xss = soup_xss.find_all(role="radio")
-    
+
     soup_string_xss = str(soup2_xss)
     list_of_colors_xss = []
     i = soup_string_xss.find('<img alt=\"')
